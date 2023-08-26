@@ -6,14 +6,17 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
 1. Instalación
 
-   Descargar el repositorio
-   Descomprimir el repositorio
-   Entrar en la carpeta servidor e iniciarlo con el comando npm start
+   -Descargar el repositorio
+   -Descomprimir el repositorio
+   -Entrar en la carpeta servidor e iniciarlo con el comando npm start
+   
    ![Captura 2](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/52763c0f-5168-416a-bdbe-d6cde62b557a)
+   
    Entrar en la carpeta TuregistoHorario e iniciarlo con el comando npm start
-   ![Captura frontend](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/93824d4c-d70f-4f0d-95fc-981371759baf)
-   ![Captura frontend 2](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/d4bc2355-54d9-4138-99f9-96eadd529f9b)
+   
+   ![Captura frontend](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/2b9ede1f-449b-4f70-838f-4fef4968e65b)
 
+   ![Captura frontend 2](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/3e6b0ede-2824-41ee-8833-846107d58e48)
 
 3. Mysql
 
@@ -22,15 +25,20 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
     Hacemos click sobre localhost para abrir la base de datos que tenemos creada con la instalación si el usuario es root la contraseña es root
 
-   ![Captura](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/ed2d1a86-027f-4fea-8be4-693f5d8a2d4b)
+   ![Captura 1](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/36d028d3-512f-4ba9-aa52-44507c1e27e6)
+
 
    Luego sobre el icono de la carpeta para añadir el script
 
-   ![Captura 2](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/41bdd35e-14c1-4b96-9ab1-2bd26413f078)
+   ![Captura 3](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/fdded9ee-15db-45cc-bcc9-e74a7101ad79)
+
+
 
    Y ejecutamos con el símbolo del rayo y tendremos la base de datos creada
 
-   ![Captura 3](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/e1050f6d-a863-424e-8ed8-b2c8343858aa)
+   ![Captura 4](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/745b6438-be91-4292-932e-1efa8d9dcdf5)
+
+
 
    Es muy importante que la base de datos tenga el mismo nombre, usuario root y la contraseña root además del localhost:3000
 
