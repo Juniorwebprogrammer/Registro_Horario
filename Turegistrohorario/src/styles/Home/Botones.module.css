@@ -1,0 +1,28 @@
+/* versión móvil */
+
+.botonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.botonEntrada {
+    width: 250px;
+    height: 50px;
+    background-color: #01ff0b;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.botonSalida {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}

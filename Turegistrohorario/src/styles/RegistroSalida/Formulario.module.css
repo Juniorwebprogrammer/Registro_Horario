@@ -1,0 +1,25 @@
+/* versión móvil*/
+
+.div{
+    display: grid;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.label{
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.input{
+    margin-bottom: 5px;
+}

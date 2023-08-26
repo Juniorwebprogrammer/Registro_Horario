@@ -1,0 +1,18 @@
+/*Versión móvil*/
+
+.containerLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: black;
+    height: 100px;
+}
+
+.containerLogo img{
+    width: 85px;
+    height: 85px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
