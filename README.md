@@ -10,12 +10,11 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
    -Descomprimir el repositorio
    -Entrar en la carpeta servidor e iniciarlo con el comando npm start
    
-   ![Captura 2](https://github.com/Juniorwebprogrammer/TuregistrohorarioApp/assets/95927731/52763c0f-5168-416a-bdbe-d6cde62b557a)
+   ![image](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/834a49e8-3b6a-4599-ba98-64febe64c767)
    
    Entrar en la carpeta TuregistoHorario e iniciarlo con el comando npm start
    
    ![Captura frontend](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/2b9ede1f-449b-4f70-838f-4fef4968e65b)
-
    ![Captura frontend 2](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/3e6b0ede-2824-41ee-8833-846107d58e48)
 
 3. Mysql
