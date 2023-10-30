@@ -46,7 +46,7 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
    Es muy importante que la base de datos tenga el mismo nombre, usuario root y la contraseña root además del localhost:3000 en caso contrario deberá realizar los siguientes pasos:
 
-      - Entrar en la carpeta servidor
+      -Entrar en la carpeta servidor
 
       -Con cualquier editor de texto o editor de código ponga los datos que le solicita
 
@@ -64,11 +64,17 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
    - En la aplicación de frontend hemos mejorado las llamadas a las apis e implementado pequeñas mejoras técnicas
 
-   - En la aplicación de backend hemos generado un sistema de administración básico para mejorar la experiencia de usuario y la posterior personalización, este administrador está ejecutado sobre handlebars ( un motor de plantillas ) y estilado con bootstrap 5
+   - En la aplicación de backend hemos generado un sistema de administración básico para mejorar la experiencia de usuario y la posterior personalización, este administrador está ejecutado sobre handlebars ( un motor de plantillas ) y estilado con bootstrap 5. Nuestra idea con este administrador es intentar dejarlo lo más simple posible para no interferir con la personalización del usuario por ello, se optó por fondos blancos y ningún tipo de detalle.
+     
+   ![index_servidor](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/3550c60c-2397-4d6c-808d-dd68a5c35825)
+   
+   ![consultas_servidor](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/230fac57-0097-4b7c-8272-6ceadfdb647e)
 
    - Hemos implementado un sistema de variables de entorno para una inicialización más sencilla a nivel de usuario
 
    - Un sistema de login propio el cual está aún pendiente de testear en entornos de producción iremos dando soporte del mismo en próximos parches
+     
+   ![Login_Servidor](https://github.com/Juniorwebprogrammer/Registro_Horario/assets/95927731/6eb6dc2d-5c87-4ec8-a185-adcd95b75da2)
 
    - Respecto a los scripts de SQL que utilizamos para poder trabajar sobre la base de datos hemos introducido pequeñas modificaciones para poder trabajar con sistema de sesiones además de facilitar un script, con el encriptamiento que estamos implementando en nuestro login, para poder introducir con mayor facilidad administradores a nuestro sistema.
 
