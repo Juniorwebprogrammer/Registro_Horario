@@ -52,7 +52,7 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
 4. Instalación guiada
 
-   Si desea puede obtener una insatalación guiada a través de una solicitud en nuestra página web con el asunto Turegistrohorario o siguiendo el tutorial que dejaremos en nuestro canal de youtube, todos los link están en el perfil de github.
+   Si desea puede obtener una insatalación guiada a través de una solicitud en nuestra página web ( https://turinconweb.vercel.app/ ) con el asunto Turegistrohorario o siguiendo el tutorial que dejaremos en nuestro canal de youtube, todos los link están en el perfil de github.
 
 5. Mejoras e implementaciones
 
