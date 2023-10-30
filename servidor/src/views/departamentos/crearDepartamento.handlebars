@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    <div class="container-md">
+        <form class="d-flex row align-items-center" action="/administrador/departamentos/postDepartamento" method="POST">
+            <div class="mb-3">
+                <label for="nombreDepartamento" class="form-label">Nombre del departamento</label>
+                <input type="text" class="form-control" name="nombreDepartamento" placeholder="Inserte un nombre de departamento" required>
+            </div>
+            <button type="submit" value="submit" class="btn btn-primary">Crear Departamento</button>
+        </form>
+    </div>
+</body>
+</html>

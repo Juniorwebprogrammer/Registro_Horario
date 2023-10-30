@@ -1,18 +1,19 @@
 const mysql = require('./connection');
 
-const getAllDepartamentos = async () => {
+const getAllDepartamentos = async() => {
     let result;
 
     let query = "Select * from departamento";
 
     try {
-        
+
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, (err, result) => {
-                    if(err){
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -28,19 +29,21 @@ const getAllDepartamentos = async () => {
     return result;
 }
 
-const getOneDepartamento = async (idDepartamento) => {
+
+const getOneDepartamento = async(idDepartamento) => {
     let result;
 
     let query = "Select * from departamento where idDepartamento = ?";
 
     try {
-        
+
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [idDepartamento], (err, result) => {
-                    if(err){
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -56,16 +59,17 @@ const getOneDepartamento = async (idDepartamento) => {
     return result;
 }
 
-const postNewDepartamento = async (newDepartamento) => {
+const postNewDepartamento = async(newDepartamento) => {
     let result;
     let query = "insert into departamento set ?";
 
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
+
+        function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [newDepartamento], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -80,18 +84,19 @@ const postNewDepartamento = async (newDepartamento) => {
     return result
 }
 
-const putOneDepartamento = async (nombreDepartamento, idDepartamento) => {
+const putOneDepartamento = async(nombreDepartamento, idDepartamento) => {
     let result;
-    
+
     let query = `update departamento set nombreDepartamento = ? where idDepartamento = ${idDepartamento}`;
 
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
+
+        function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [nombreDepartamento], (err, result) => {
-                    if(err){
-                        reject (err)
+                    if (err) {
+                        reject(err)
                     } else {
                         resolve(result)
                     }
@@ -106,15 +111,16 @@ const putOneDepartamento = async (nombreDepartamento, idDepartamento) => {
 
 }
 
-const deleteDepartamento = async (idDepartamento) => {
+const deleteDepartamento = async(idDepartamento) => {
     let result;
     let query = "delete from departamento where idDepartamento = ?"
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
-            return new Promise((resolve, reject)=> {
+
+        function sendQuery(query) {
+            return new Promise((resolve, reject) => {
                 mysql.query(query, [idDepartamento], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)

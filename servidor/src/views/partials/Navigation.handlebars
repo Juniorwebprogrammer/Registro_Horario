@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex alig-items-center ms-3" href="/administrador">Tu Registro Horario</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav container-fluid d-flex justify-content-end me-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Departamentos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/administrador/departamentos">Consultar Departamento</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/administrador/departamentos/crearDepartamento">Crear Departamento</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuarios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/administrador/usuarios">Consultar Usuario</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/administrador/usuarios/crearUsuario">Crear Usuario</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Registros
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/administrador/registroEntrada">Consultar Entrada</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/administrador/registroSalida">Consultar Salida</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Registrar</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/administrador/registroEntrada/registrarEntrada">Registrar Entrada</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/administrador/registroSalida/registrarSalida">Registrar Salida</a>
+                        </li>
+                    </ul>
+                </li>
+                <button type="button" class="btn btn-danger ms-4">
+                    <a href="/logout" class="link-underline link-underline-opacity-0 text-reset">Cerrar sesión</a>
+                </button>
+            </ul>
+        </div>
+    </div>
+</nav>

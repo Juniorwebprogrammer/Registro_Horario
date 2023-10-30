@@ -1,40 +1,42 @@
 const express = require('express');
 const mysql = require('./connection');
 
-const getAllUsuarios = async () => {
+const getAllUsuarios = async() => {
     let result;
     let query = 'Select * from usuarios'
-    try{
+    try {
         result = await sendQuery(query)
         result = JSON.stringify(result, null, 2)
-        function sendQuery(query){
+
+        function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     }
                     resolve(result)
                 })
             })
         }
-    } catch (err){
+    } catch (err) {
         console.log(err)
     }
     //console.log(result)
     return result
 }
 
-const getOneUsuario = async (idUsuario) => {
+const getOneUsuario = async(idUsuario) => {
     let result;
     let query = 'Select * from usuarios where idUsuario = ?';
 
     try {
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [idUsuario], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -49,16 +51,41 @@ const getOneUsuario = async (idUsuario) => {
     return result;
 }
 
-const postNewUsuario = async (newUsuario) => {
+const getAllUsuariosFK = async() => {
+    let result;
+    let query = 'select * from usuarios left join departamento on usuarios.departamento = departamento.idDepartamento'
+    try {
+        result = await sendQuery(query)
+        result = JSON.stringify(result, null, 2)
+
+        function sendQuery(query) {
+            return new Promise((resolve, reject) => {
+                mysql.query(query, (err, result) => {
+                    if (err) {
+                        reject(err)
+                    }
+                    resolve(result)
+                })
+            })
+        }
+    } catch (err) {
+        console.log(err)
+    }
+
+    return result
+}
+
+const postNewUsuario = async(newUsuario) => {
     let result;
     let query = 'insert into usuarios set ?';
 
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
+
+        function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [newUsuario], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -73,15 +100,16 @@ const postNewUsuario = async (newUsuario) => {
     return result
 }
 
-const putOneUsuario = async (editsUsuario, idUsuario) => {
+const putOneUsuario = async(editsUsuario, idUsuario) => {
     let result;
     let query = `Update usuarios set ?  where idUsuario = ${idUsuario}`;
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
-            return new Promise((resolve, reject)=>{
+
+        function sendQuery(query) {
+            return new Promise((resolve, reject) => {
                 mysql.query(query, [editsUsuario], (err, result) => {
-                    if(err){
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -96,16 +124,17 @@ const putOneUsuario = async (editsUsuario, idUsuario) => {
     return result
 }
 
-const deleteUsuarios = async (idUsuario) => {
+const deleteUsuarios = async(idUsuario) => {
     let result;
     let query = "Delete from usuarios where idUsuario = ?";
 
     try {
         result = await sendQuery(query);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [idUsuario], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -123,6 +152,7 @@ const deleteUsuarios = async (idUsuario) => {
 module.exports = {
     getAllUsuarios,
     getOneUsuario,
+    getAllUsuariosFK,
     postNewUsuario,
     putOneUsuario,
     deleteUsuarios

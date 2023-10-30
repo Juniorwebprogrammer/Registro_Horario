@@ -1,16 +1,21 @@
 const RegistroEntradaDB = require('../database/RegistroEntrada');
 
-const getAllRegistrosEntrada = async () => {
+const getAllRegistrosEntrada = async() => {
     const allRegistrosEntrada = await RegistroEntradaDB.getAllRegistrosEntrada();
     return allRegistrosEntrada;
 }
 
-const getOneRegistroEntrada = async (idRegistroEntrada) => {
+const getOneRegistroEntrada = async(idRegistroEntrada) => {
     const oneRegistroEntrada = await RegistroEntradaDB.getOneRegistroEntrada(idRegistroEntrada);
     return oneRegistroEntrada;
 }
 
-const getOneRegistroEntradaUser = async (fk_registroEntrada_Usuarios) => {
+const getAllRegistrosEntradaFK = async() => {
+    const allRegistrosEntradaFK = await RegistroEntradaDB.getAllRegistrosEntradaFK();
+    return allRegistrosEntradaFK;
+}
+
+const getOneRegistroEntradaUser = async(fk_registroEntrada_Usuarios) => {
     const oneRegistroEntradaUserid = await RegistroEntradaDB.getOneRegistroEntradaUser(fk_registroEntrada_Usuarios);
 
     return oneRegistroEntradaUserid
@@ -28,6 +33,7 @@ const postNewRegistroEntrada = async(newRegistroEntrada) => {
 
 module.exports = {
     getAllRegistrosEntrada,
+    getAllRegistrosEntradaFK,
     getOneRegistroEntrada,
     getOneRegistroEntradaUser,
     postNewRegistroEntrada

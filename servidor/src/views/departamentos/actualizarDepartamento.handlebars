@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    {{>Navigation}}
+    <div class="container-md">
+        {{#each departamento}}
+            <form class="d-flex row align-items-center" action="/administrador/departamentos/editDepartamento/{{this.idDepartamento}}" method="post">
+                <div class="mb-3">
+                    <label for="nombreDepartamento" class="form-label">Nombre del departamento</label>
+                    <input type="text" class="form-control" name="nombreDepartamento" value={{this.nombreDepartamento}} required>
+                </div>
+                <button type="submit" value="submit" class="btn btn-primary">Actualizar Departamento</button>
+            </form>
+        {{/each}}
+    </div>
+</body>
+</html>

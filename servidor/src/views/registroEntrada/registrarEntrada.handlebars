@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    <div class="container-md">
+        <form class="d-flex row align-items-center mt-3" action="/administrador/registroEntrada/postEntrada" method="POST">
+            <div class="mb-3">
+                <label for="fk_registroEntrada_Usuarios" class="form-label">Código de usuario</label>
+                <input type="text" class="form-control" name="fk_registroEntrada_Usuarios" placeholder="Inserte el código del Usuario" required>
+                <label for="DateTiem" class="form-label">Fecha y hora del registro</label>
+                <input type="datetime-local" name="DateTiem" required>
+            </div>
+            <button type="submit" value="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,19 +1,20 @@
 const mysql = require('./connection');
 
-const getAllRegistrosEntrada = async () => {
+const getAllRegistrosEntrada = async() => {
     let result;
 
     let query = "Select * from registroentrada";
 
     try {
-        
+
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, (err, result) => {
-                    if(err) {
-                        resject(err);
+                    if (err) {
+                        reject(err);
                     } else {
                         resolve(result)
                     }
@@ -26,10 +27,10 @@ const getAllRegistrosEntrada = async () => {
     }
 
     return result
-    
+
 }
 
-const getOneRegistroEntrada = async (idRegistroEntrada) => {
+const getOneRegistroEntrada = async(idRegistroEntrada) => {
     let result;
 
     let query = 'Select * from registroEntrada where idRegistroEntrada = ?';
@@ -37,10 +38,11 @@ const getOneRegistroEntrada = async (idRegistroEntrada) => {
     try {
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [idRegistroEntrada], (err, result) => {
-                    if(err){
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -55,7 +57,7 @@ const getOneRegistroEntrada = async (idRegistroEntrada) => {
     return result
 }
 
-const getOneRegistroEntradaUser = async (fk_registroEntrada_Usuarios) => {
+const getOneRegistroEntradaUser = async(fk_registroEntrada_Usuarios) => {
 
     let result;
 
@@ -64,10 +66,11 @@ const getOneRegistroEntradaUser = async (fk_registroEntrada_Usuarios) => {
     try {
         result = await sendQuery(query);
         result = JSON.stringify(result, null, 2);
+
         function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [fk_registroEntrada_Usuarios], (err, result) => {
-                    if(err){
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -82,16 +85,45 @@ const getOneRegistroEntradaUser = async (fk_registroEntrada_Usuarios) => {
     return result
 }
 
-const postNewRegistroEntrada = async (newRegistroEntrada) => {
+const getAllRegistrosEntradaFK = async() => {
+    let result;
+    let query = 'select * from registroEntrada left join usuarios on registroEntrada.fk_registroEntrada_Usuarios = usuarios.idUsuario'
+
+    try {
+        result = await sendQuery(query);
+        result = JSON.stringify(result, null, 2);
+
+        function sendQuery(query) {
+            return new Promise((resolve, reject) => {
+                mysql.query(query, (err, result) => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve(result)
+                    }
+                })
+            })
+        }
+    } catch (error) {
+        console.log(error)
+    }
+
+    return result
+}
+
+// Añadir búsqueda por fecha 
+
+const postNewRegistroEntrada = async(newRegistroEntrada) => {
     let result;
     let query = "insert into registroentrada set ?";
 
     try {
         result = await sendQuery(query);
-        function sendQuery(query){
+
+        function sendQuery(query) {
             return new Promise((resolve, reject) => {
                 mysql.query(query, [newRegistroEntrada], (err, result) => {
-                    if(err) {
+                    if (err) {
                         reject(err)
                     } else {
                         resolve(result)
@@ -110,5 +142,6 @@ module.exports = {
     getAllRegistrosEntrada,
     getOneRegistroEntrada,
     getOneRegistroEntradaUser,
+    getAllRegistrosEntradaFK,
     postNewRegistroEntrada
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    {{#if usuario}}
+    <div class="d-block p-2 justify-content-start">
+        <table class="table table-bordered border-primary table-responsive table-sm">
+            <h3 class="d-flex justify-content-center mb-3">Usuarios actualmente activos</h3>
+                <thead>
+                    <tr>
+                        <th scope="col" class="w-25">id</th>
+                        <th scope="col" class="w-25">Nombre del usuario</th>
+                        <th scope="col" class="w-25">Email del usuario</th>
+                        <th scope="col" class="w-25">Departamento del Usuario</th>
+                        <th scope="col" class="w-25">Acciones</th>
+                    </tr>
+                </thead>
+            {{#each usuario}}
+                <tbody>
+                    <tr class="w-25">
+                        <th scope="row">{{this.idUsuario}}</th>
+                        <td>{{this.nombreUsuario}}</td>
+                        <td>{{this.email_Usuario}}</td>
+                        <td>{{this.nombreDepartamento}}</td>
+                        <td>
+                            <button class="btn btn-secondary">
+                                <a href="/administrador/usuarios/actualizarUsuario/{{this.idUsuario}}" class="link-underline link-underline-opacity-0 text-reset">Actualizar</a>
+                            </button>
+                            <form action="/administrador/usuarios/deleteUsuario/{{this.idUsuario}}" method="post" class="align-items-center mt-2">
+                                <button class="btn btn-danger">Eliminar  </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            {{/each}}
+        </table>
+        {{else}}
+        <div class="container">
+            <h2 class="d-flex justify-content-center mb-3 mt-5">No tiene actualmente ningún usuario activo, por favor registre uno</h2>
+        </div>
+    </div>
+    {{/if}}
+</body>
+</html>

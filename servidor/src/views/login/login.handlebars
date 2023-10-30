@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="container-md mt-5">
+        <h1>Inicio de sesión</h1>
+        <form action="/auth" method="post" class="d-flex row align-items-center mt-3">
+            <section>
+                <label for="emailAdministrador" class="form-label">Email de usuario</label>
+                <input id="emailAdministrador" name="emailAdministrador" type="email" autocomplete="email" required autofocus class="form-control">
+            </section>
+            <section>
+                <label for="contraseñaAdministrador" class="form-label">Contraseña</label>
+                <input id="contraseñaAdministrador" name="contraseñaAdministrador" type="password" autocomplete="password" required class="form-control">
+            </section>
+            <button type="submit" value="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
+        </form>
+    </div> 
+</body>
+</html>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function loadDataRegistroEntrada(fk_registroEntrada_Usuarios) {
-    const res = await fetch(`http://localhost:4000/api/v1/registroEntrada/${fk_registroEntrada_Usuarios}`, {cache: 'no-cache'})
+    const res = await fetch(`http://localhost:4000/api/v1/registroEntrada/${fk_registroEntrada_Usuarios}`, {cache: 'no-store'})
     if(!res.ok){
         throw new Error("Hay un error con el estado de la api");
     }
@@ -12,7 +12,7 @@ async function loadDataRegistroEntrada(fk_registroEntrada_Usuarios) {
 }
 
 async function loadDataRegistroSalida(fk_registroSalida_Usuarios){
-    const res = await fetch(`http://localhost:4000/api/v1/registroSalida/${fk_registroSalida_Usuarios}`, {cache: 'no-cache'});
+    const res = await fetch(`http://localhost:4000/api/v1/registroSalida/${fk_registroSalida_Usuarios}`, {cache: 'no-store'});
 
     if(!res.ok){
         throw new Error("Hay un error con el estado de la api");

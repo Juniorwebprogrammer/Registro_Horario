@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    <div class="container-md">
+        {{#each usuario}}
+            <form class="d-flex row align-items-center" action="/administrador/usuarios/editUsuario/{{this.idUsuario}}" method="post">
+                <div class="mb-3">
+                    <label for="nombreUsuario" >Nombre del usuario</label>
+                    <input type="text" class="form-control" name="nombreUsuario" placeholder="Inserte el nombre del Usuario" value={{this.nombreUsuario}} required>
+                    <label for="email_Usuario" class="form-label">Email del usuario</label>
+                    <input type="email" class="form-control" name="email_Usuario" placeholder="Inserte el email del usuario" value={{this.email_Usuario}} required>
+                    <label for="departamento" class="form-label">Seleccione departamento</label>
+                    <input type="number" class="form-control" name="departamento" placeholder="Inserte el código del departamento" value={{this.departamento}} required>
+                </div>
+                <button type="submit" value="submit" class="btn btn-primary">Actualizar Usuario</button>
+            </form>
+        {{/each}}
+    </div>
+</body>
+</html>

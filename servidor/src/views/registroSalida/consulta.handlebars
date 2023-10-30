@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    {{#if registroSalida}}
+    <div class="d-block p-2 justify-content-start">
+        <table class="table table-bordered border-primary table-responsive table-sm">
+            <h3 class="d-flex justify-content-center mb-3">Registros de salida guardados</h3>
+                <thead>
+                    <tr>
+                        <th scope="col" class="w-25">idRegistroSalida</th>
+                        <th scope="col" class="w-25">Código de Usuario</th>
+                        <th scope="col" class="w-25">Fecha y hora</th>
+                    </tr>
+                </thead>
+            {{#each registroSalida}}
+                <tbody>
+                    <tr class="w-25">
+                        <th scope="row">{{this.idRegistroSalida}}</th>
+                        <td>{{this.nombreUsuario}}</td>
+                        <td>{{this.DateTime}}</td>
+                    </tr>
+                </tbody>
+            {{/each}}
+        </table>
+    </div>
+    {{/if}}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {{>Navigation}}
+    <div class="container-md">
+        <form class="d-flex row align-items-center mt-3" action="/administrador/usuarios" method="POST">
+            <div class="mb-3">
+                <label for="nombreDepartamento" class="form-label">Nombre del Usuario</label>
+                <input type="text" class="form-control" name="nombreUsuario" placeholder="Inserte el nombre del Usuario" required>
+                <label for="email_Usuario" class="form-label">Email del usuario</label>
+                <input type="email" class="form-control" name="email_Usuario" placeholder="Inserte el email del usuario" required>
+                <label for="departamento" class="form-label">Seleccione departamento</label>
+                <input type="number" class="form-control" name="departamento" placeholder="Inserte el código del departamento" required>
+                <label>Leyenda para código de departamento</label>
+                {{#if departamento}}
+                        <select class="mt-3">
+                            <option value="">--Seleccione Departamento--</option>
+                            {{#each departamento}}
+                                <option value={{this.idDepartamento}}>{{this.nombreDepartamento}} = {{this.idDepartamento}}</option>
+                            {{/each}}
+                        </select>
+                {{else}}
+                    <h2>No tiene ningún departamento, por favor cree primero uno</h2>
+                {{/if}}
+            </div>
+            <button type="submit" value="submit" class="btn btn-primary">Crear Usuario</button>
+        </form>
+    </div>
+</body>
+</html>
