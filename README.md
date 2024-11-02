@@ -10,7 +10,9 @@ El objetivo de este proyecto es ser desplegado en local para gestionar las entra
 
    -Descomprimir el repositorio
 
-   -Entrar en la carpeta servidor y ejecuta npm install para instalar las dependencias
+   -Entrar en la carpeta servidor y rellenar el archivo.env ( podrá obtener los datos desde su servicio mysql )
+   
+   -Ejecute npm install para instalar las dependencias
 
    -Ejecuta npm start para poder tener la primera vista (aún debe ejectuar los scripts mysql)
    
