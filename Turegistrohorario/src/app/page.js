@@ -7,7 +7,12 @@ export default function Home() {
     <>
       <div className={styles.homePage}>
         <Info/>
-        <Botones/>
+        <Botones
+          link1="/RegistroEntrada"
+          link2="/RegistroSalida"
+          text1="Registro de Entrada"
+          text2="Registro de Salida"
+        />
       </div>
     </>
   )

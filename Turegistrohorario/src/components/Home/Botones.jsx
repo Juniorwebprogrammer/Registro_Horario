@@ -1,15 +1,63 @@
-import styles from '@/styles/Home/Botones.module.css';
 import Link from 'next/link';
+import { Button, Grid2 as Grid, Typography } from '@mui/material';
 
-export default function Botones(){
-    return(
-        <div className={styles.botonContainer}>
-            <Link href="/RegistroEntrada">
-                <button className="btn btn-lg btn-success mt-3" style={{height: 50, width: 200}}>Registrar entrada</button>
+const botonRegistroEntrada = {
+    variant: 'contained',
+    color: 'success',
+    sx: {
+        height: 50,
+        width: 200,
+        marginRight: "50px" 
+    }
+};
+
+const botonRegistroSalida = {
+    variant: 'contained',
+    color: 'white',
+    sx: {
+        height: 50,
+        width: 200,
+    }
+};
+
+const textoBoton = {
+    fontSize: 14,
+    fontWeight: 600
+};
+
+const textoBoton2 = {
+    fontSize: 15,
+    fontWeight: 600,
+    color: 'black'
+};
+
+const contenedorGrid = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '35px'
+};
+
+export default function Botones({
+    link1,
+    link2,
+    text1,
+    text2
+}) {
+    return (
+        <Grid container sx={contenedorGrid}>
+            <Link href={link1}>
+                <Button {...botonRegistroEntrada}>
+                    <Typography sx={textoBoton}>{text1}</Typography>
+                </Button>
             </Link>
-            <Link href="/RegistroSalida">
-                <button className="btn btn-lg btn-warning mt-3" style={{height: 50, width:200}}>Registrar salida </button>
+
+            <Link href={link2}>
+                <Button {...botonRegistroSalida}>
+                    <Typography sx={textoBoton2}>{text2}</Typography>
+                </Button>
             </Link>
-        </div>
-    )
+        </Grid>
+    );
 }

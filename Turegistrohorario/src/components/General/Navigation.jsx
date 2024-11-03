@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { 
+    Avatar, 
+    Button,
+    Drawer, 
+    Grid as Grid2,
+    Typography 
+} from '@mui/material';
+
 export default function Navigation(){
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
