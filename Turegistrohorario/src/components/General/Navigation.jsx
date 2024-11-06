@@ -1,54 +1,62 @@
+"use client";
+
+import DrawerUI from './Drawer/Drawer';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 import { 
     Avatar, 
+    Box,
     Button,
-    Drawer, 
-    Grid as Grid2,
-    Typography 
+    Typography,
+    useMediaQuery
 } from '@mui/material';
 
-export default function Navigation(){
-    return(
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="container-fluid">
+import { 
+    Menu as MenuIcon,
+} from '@mui/icons-material';
+
+export default function Navigation() {
+    const [open, setOpen] = useState(false);
+
+    const isLargeScreen = useMediaQuery('(min-width:501px)');
+    const isSmallScreen = useMediaQuery('(max-width:500px)'); 
+
+    const toggleDrawer = (newOpen) => () => {
+        setOpen(newOpen);
+    };
+
+    return (
+        <Box className="navbar navbar-expand-lg bg-body-tertiary">
+            <Box className="container-fluid" display="flex" alignItems="center">
                 <Link href="/">
-                    <Image className="navbar-brand ms-5 " src="/logo.png" alt="logo" width={70} height={70}/>
+                    <Avatar variant="circular" src="/logo.webp" alt="logo" sx={{ height: 50, width: 50 }} />
                 </Link>
                 <Link href="/" legacyBehavior>
-                    <a className="navbar-brand d-flex alig-items-center" href="/">Tu Registro Horario</a>
+                    <Typography
+                        align="center"
+                        color="textPrimary"
+                        sx={{
+                            fontSize: '20px',
+                            fontWeight: 'bold',
+                            textDecoration: 'none',
+                            ml: 2,
+                        }}
+                    >
+                        Tu Registro Horario
+                    </Typography>
                 </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav container-fluid d-flex justify-content-end me-5">
-                    <li className="nav-item">
-                        <Link href="/Usuarios" legacyBehavior>
-                            <a className="nav-link active" aria-current="page">Consultas de Usuarios</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Registros
-                    </a>
-                    <ul className="dropdown-menu">
-                        <li>
-                            <Link href="/RegistroEntrada" legacyBehavior>
-                                <a className="dropdown-item">Registrar Entrada</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/RegistroSalida" legacyBehavior>
-                                <a className="dropdown-item">Registrar Salida</a>
-                            </Link>
-                        </li>
-                    </ul>
-                    </li>
-                </ul>
-                </div>
-            </div>
-        </nav>
-    )
+                <Button onClick={toggleDrawer(true)} sx={{ ml: 'auto' }}>
+                    <MenuIcon />
+                </Button>
+                <DrawerUI 
+                    isLargeScreen={isLargeScreen}
+                    isSmallScreen={isSmallScreen}
+                    toggleDrawer={toggleDrawer}
+                    open={open}
+                />
+            </Box>
+        </Box>
+    );
 }
