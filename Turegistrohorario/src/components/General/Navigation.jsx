@@ -1,9 +1,5 @@
 "use client";
-
-import DrawerUI from './Drawer/Drawer';
-
 import React, { useState } from 'react';
-import Link from 'next/link';
 
 import { 
     Avatar, 
@@ -16,6 +12,8 @@ import {
 import { 
     Menu as MenuIcon,
 } from '@mui/icons-material';
+
+import DrawerUI from './Drawer/Drawer';
 
 export default function Navigation() {
     const [open, setOpen] = useState(false);
@@ -30,7 +28,7 @@ export default function Navigation() {
     return (
         <Box className="navbar navbar-expand-lg bg-body-tertiary">
             <Box className="container-fluid" display="flex" alignItems="center">
-                <Avatar variant="circular" src="/logo.webp" alt="logo" sx={{ height: 50, width: 50 }} />
+                <Avatar variant="circular" src="/logo.webp" alt="logo" sx={{ height: 50, width: 50, marginLeft: 2 }} />
                 
                 <Typography
                     align="center"
@@ -39,7 +37,8 @@ export default function Navigation() {
                         fontSize: '20px',
                         fontWeight: 'bold',
                         textDecoration: 'none',
-                        ml: 2,
+                        ml: isLargeScreen ? 2 : 'auto', 
+                        mr: isLargeScreen ? 'auto' : 0,
                     }}
                 >
                     Tu Registro Horario
