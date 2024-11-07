@@ -1,7 +1,6 @@
 "use client";
 
 import DrawerOptions from './drawerOptions';
-
 import Link from 'next/link';
 
 import { 
@@ -14,6 +13,7 @@ import {
     ListItemButton,
     ListItemText,
     Typography,
+    Tooltip, // Importa Tooltip de Material-UI
     useMediaQuery
 } from '@mui/material';
 
@@ -31,8 +31,11 @@ export default function DrawerUI({
                     <ListItem key={option.label} disablePadding>
                         <Link href={option.href} passHref legacyBehavior>
                             <ListItemButton component="a" onClick={toggleDrawer(false)}>
-                                {option.icon}
-                                {(isSmallScreen) && ( // Muestra el texto tanto en pantallas pequeñas como grandes
+                                {/* Agrega Tooltip para mostrar el nombre de la opción */}
+                                <Tooltip title={option.label} placement="right">
+                                    <span>{option.icon}</span> {/* Asegura que el icono esté dentro de un elemento inline */}
+                                </Tooltip>
+                                {(isSmallScreen) && ( 
                                     <ListItemText primary={option.label} sx={{ ml: 2 }} />
                                 )}
                             </ListItemButton>
@@ -46,14 +49,14 @@ export default function DrawerUI({
     return(
         <>
             <Drawer
-                anchor="right" // Establecer el Drawer en el lado derecho
+                anchor="right"
                 open={open}
                 onClose={toggleDrawer(false)}
-                variant={isLargeScreen ? 'permanent' : 'temporary'} // Cambia entre permanente y temporal
+                variant={isLargeScreen ? 'permanent' : 'temporary'} 
                 PaperProps={{
                     sx: {
-                        backgroundColor: '#f5f5f5', // Color de fondo del Drawer
-                        width: isLargeScreen ? 70 : 250, // Ancho del Drawer
+                        backgroundColor: '#f5f5f5', 
+                        width: isLargeScreen ? 70 : 250, 
                     },
                 }}
             >
