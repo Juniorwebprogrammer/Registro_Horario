@@ -5,6 +5,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const hbs = require('express-handlebars');
 const session = require('express-session');
+const fileUpload = require('express-fileupload');
 const MySQLStore = require('express-mysql-session')(session);
 
 // Inicialización
@@ -63,6 +64,11 @@ app.use(morgan('dev')); // mostrar registro de http method
 app.use(express.json()); // body-parser
 
 app.use(express.urlencoded({ extended: true })); // analiza url entrates con datos
+
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: path.join(__dirname, 'uploads')
+})); // manejar archivos
 
 app.use(cors()); // conección API desde frontend
 
