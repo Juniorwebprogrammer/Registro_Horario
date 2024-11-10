@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `registrohorario`.`usuarios` (
   `nombreUsuario` VARCHAR(45) NOT NULL,
   `email_Usuario` VARCHAR(50) NOT NULL,
   `departamento` INT NOT NULL,
+  `media` VARCHAR(200),
   PRIMARY KEY (`idUsuario`),
   INDEX `fk_usuario_departamento_idx` (`departamento` ASC) VISIBLE)
 ENGINE = InnoDB
